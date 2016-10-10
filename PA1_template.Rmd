@@ -36,7 +36,7 @@ summarize(total_steps = sum(steps))
 
 Next, we can make the histogram using ggplot2:
 
-```{r histo1, echo=TRUE, warning=FALSE}
+```{r histo1, echo=TRUE, warning=FALSE, fig.path='figure/'}
 # 2. Make a histogram of the total number of steps taken each day
 library(ggplot2)
 ggplot(steps_by_day, aes(x=total_steps)) +
@@ -64,7 +64,7 @@ print(median_steps)
 
 Here is the nifty pattern:
 
-```{r time_series, echo=TRUE}
+```{r time_series, echo=TRUE, fig.path='figure/'}
 
 # 4. Make a time series plot of the 5-minute interval and the average number 
 #    of steps taken, averaged across all days (y-axis)
@@ -126,7 +126,7 @@ activity_imputed$steps[na] <- avg[as.character(activity_imputed$interval[na])]
 
 Below is what the histogram looks like with imputed values:
 
-```{r histo2, echo=TRUE}
+```{r histo2, echo=TRUE, fig.path='figure/'}
 # 9. Make a histogram of the total number of steps taken each day and 
 #    calculate and report the mean and median total number of steps taken 
 #    per day. Do these values differ from the estimates from the first part 
@@ -163,7 +163,7 @@ activity_imputed$type <-  ifelse(as.POSIXlt(activity_imputed$date)$wday %in% c(0
 
 
 Yes, the two panels show a different distribution of weekdays vs weekends:
-```{r panel, echo=TRUE}
+```{r panel, echo=TRUE, fig.path='figure/'}
 # 11. Make a panel plot containing a time series plot of the 5-minute 
 #     interval (x-axis) and the average number of steps taken, averaged across 
 #     all weekday days or weekend days (y-axis). 
